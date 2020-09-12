@@ -5,12 +5,12 @@ import React from 'react';
 import Wad from 'web-audio-daw';
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
+import Clock from './Clock';
 
 function App() {
 
   let request_id;
 
-  let saw = new Wad({source : 'sawtooth'});
   let voice = new Wad({source : 'mic' });
   let tuner = new Wad.Poly();
 
@@ -18,14 +18,6 @@ function App() {
     console.log(tuner.pitch, tuner.noteName);
     request_id = requestAnimationFrame(logPitch);
   };
-
-  function playsaw() {
-    saw.play();
-  }
-
-  function stopsaw() {
-    saw.stop();
-  }
 
   function playvoice() {
     tuner.setVolume(0); // If you're not using headphones, you can eliminate microphone feedback by muting the output from the tuner.
@@ -42,31 +34,14 @@ function App() {
   }
 
   return (
-      <div className="App">
-        <Navbar bg="light">
-          <img
-              alt=""
-              src=""
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-          />
-          <Navbar.Brand href="#home">Whistful</Navbar.Brand>
-        </Navbar>
-        <header className="App-header">
-          <Button variant="outline-secondary" className="my-2" onClick={playsaw}>
-            Play test
-          </Button>
-          <Button variant="outline-secondary" className="my-2" onClick={stopsaw}>
-            Stop test
-          </Button>
-          <Button variant="outline-secondary" className="my-2" onClick={playvoice}>
+      <div>
+          <h3>Have fun whistling!</h3>
+          <Button variant="outline-secondary" className="mx-2" onClick={playvoice}>
             Start recording
           </Button>
-          <Button variant="outline-secondary" className="my-2" onClick={stopvoice}>
+          <Button variant="outline-secondary" className="mx-2" onClick={stopvoice}>
             Stop recording
           </Button>
-        </header>
       </div>
   );
 
