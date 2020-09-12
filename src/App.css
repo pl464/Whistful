@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+#pitch-display {
+    font-size: 100px;
+    font-weight: 300;
+    margin: 20px;
+    background: rgba(0, 151, 19, 0.3);
+    border-radius: 50%;
+}
