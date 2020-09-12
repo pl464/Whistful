@@ -4,6 +4,7 @@ import './App.css';
 import React from 'react';
 import Wad from 'web-audio-daw';
 import Button from 'react-bootstrap/Button';
+import Navbar from 'react-bootstrap/Navbar';
 
 function App() {
 
@@ -41,23 +42,34 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <Button variant="outline-secondary" className="my-2" onClick={playsaw}>
-          Play test
-        </Button>
-        <Button variant="outline-secondary" className="my-2" onClick={stopsaw}>
-          Stop test
-        </Button>
-        <Button variant="outline-secondary" className="my-2" onClick={playvoice}>
-          Start recording
-        </Button>
-        <Button variant="outline-secondary" className="my-2" onClick={stopvoice}>
-          Stop recording
-        </Button>
-      </header>
-    </div>
+      <div className="App">
+        <Navbar bg="light">
+          <img
+              alt=""
+              src=""
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+          />
+          <Navbar.Brand href="#home">Whistful</Navbar.Brand>
+        </Navbar>
+        <header className="App-header">
+          <Button variant="outline-secondary" className="my-2" onClick={playsaw}>
+            Play test
+          </Button>
+          <Button variant="outline-secondary" className="my-2" onClick={stopsaw}>
+            Stop test
+          </Button>
+          <Button variant="outline-secondary" className="my-2" onClick={playvoice}>
+            Start recording
+          </Button>
+          <Button variant="outline-secondary" className="my-2" onClick={stopvoice}>
+            Stop recording
+          </Button>
+        </header>
+      </div>
   );
+
 }
 
 export default App;
