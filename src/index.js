@@ -35,15 +35,15 @@ function Home() {
 function MyNavBar() {
     return (
         <Navbar bg="light" variant="light">
-            <img
-                alt=""
-                src=""
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-            />
+            {/*<img*/}
+            {/*    alt=""*/}
+            {/*    src=""*/}
+            {/*    width="30"*/}
+            {/*    height="30"*/}
+            {/*    className="d-inline-block align-top"*/}
+            {/*/>*/}
             <Navbar.Brand href="home">Whistful</Navbar.Brand>
-            <Nav className="mr-auto">
+            <Nav>
                 <Nav.Link href="home">Home</Nav.Link>
                 <Nav.Link href="test">Test</Nav.Link>
                 <Nav.Link href="whistle">Whistle</Nav.Link>
